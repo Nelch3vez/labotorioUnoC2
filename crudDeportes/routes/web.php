@@ -18,4 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('deportes',[DeporteController::class,'index'])->name('deportes.index');
+Route::get('deportes/create',[DeporteController::class,'create'])->name('deportes.create');
+Route::post('deportes',[DeporteController::class,'store'])->name('deportes.store');
+Route::get('deportes/{id}',[DeporteController::class,'show'])->name('deportes.show');
+Route::get('deportes/{id}/edit',[DeporteController::class,'edit'])->name('deportes.edit');
+Route::put('deportes/{id}',[DeporteController::class,'update'])->name('deportes.update');
+Route::delete('deportes/{id}',[DeporteController::class,'destroy'])->name('deportes.destroy');
